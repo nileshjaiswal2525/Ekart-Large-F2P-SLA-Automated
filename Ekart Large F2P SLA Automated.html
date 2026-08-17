@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ekart Large F2P SLA Automated</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+.header {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, #1a3a6b, #4a6fa5);
+  color: #fff;
+  padding: 15px 25px;
+}
+.header img {
+  height: 55px;
+  margin-right: 15px;
+}
+.header h1 {
+  font-size: 26px;
+  margin: 0;
+}
+.creator {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  margin: 15px 25px;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img src="C:/Users/nileshp.vc/Documents/Automated/SLA Automated/Ekart_Logo.png" alt="Ekart Logo">
+  <h1>Ekart Large F2P SLA Automated</h1>
+</div>
+<p class="creator">Prepared by – Nilesh Jaiswal (With the Help of Google Gemini and Microsoft Copilot)</p>
+
+</body>
+</html>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;font-size:14px;background:#f5f5f5;color:#222}
+.page{max-width:1200px;margin:0 auto;padding:24px 20px}
+h1{font-size:22px;font-weight:700;margin-bottom:4px}
+.sub{font-size:13px;color:#666;margin-bottom:20px}
+.inputs{display:flex;gap:16px;margin-bottom:16px;flex-wrap:wrap}
+.card{background:#fff;border:1px solid #ddd;border-radius:10px;padding:16px;flex:1;min-width:240px}
+.lbl{font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.drop{border:2px dashed #ccc;border-radius:8px;padding:20px;text-align:center;cursor:pointer;transition:background .15s}
+.drop:hover,.drop.over{background:#f0f4ff;border-color:#4a6fa5}
+.drop-icon{font-size:28px;margin-bottom:6px}
+.drop-text{font-size:13px;color:#555}
+.drop-hint{font-size:11px;color:#999;margin-top:3px}
+.file-ok{font-size:12px;color:#2e7d32;font-weight:700;margin-top:8px;display:none}
+.progress{font-size:12px;color:#555;margin-top:8px;display:none;background:#f0f4ff;padding:8px;border-radius:6px}
+.err{color:#c62828;font-size:12px;margin-top:6px;display:none;background:#fff3f3;padding:8px;border-radius:6px;border-left:3px solid #c62828}
+.pin-row{display:flex;gap:8px}
+.pin-row input{flex:1;font-size:20px;font-weight:700;text-align:center;height:48px;border:1.5px solid #ccc;border-radius:8px;padding:0 12px;outline:none}
+.pin-row input:focus{border-color:#4a6fa5}
+.run-btn{height:48px;padding:0 20px;font-size:14px;font-weight:700;cursor:pointer;border-radius:8px;border:none;background:#1a3a6b;color:#fff;white-space:nowrap}
+.run-btn:hover{background:#14305a}
+.run-btn:active{transform:scale(.98)}
+.hint{font-size:11px;color:#999;margin-top:6px;line-height:1.5}
+.results{display:none;margin-top:4px}
+.summary{display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap;align-items:center}
+.stat{background:#fff;border:1px solid #ddd;border-radius:8px;padding:10px 16px}
+.stat-n{font-size:24px;font-weight:700}
+.stat-l{font-size:11px;color:#888}
+.stat.g .stat-n{color:#2e7d32}
+.stat.a .stat-n{color:#e65100}
+.stat.r .stat-n{color:#b71c1c}
+.src-tag{font-size:12px;color:#666;background:#eee;padding:4px 12px;border-radius:20px;margin-left:auto}
+.frow{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap;align-items:center}
+.frow input,.frow select{height:34px;font-size:13px;border:1px solid #ccc;border-radius:6px;padding:0 10px;outline:none}
+.frow input{width:220px}
+.tbl-wrap{overflow-x:auto;border:1px solid #ddd;border-radius:8px;background:#fff}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead tr{background:#f0f2f5}
+th{padding:10px 12px;text-align:left;font-weight:700;font-size:12px;color:#555;border-bottom:1px solid #ddd;white-space:nowrap;cursor:pointer;user-select:none}
+th:hover{color:#1a3a6b;background:#e8ecf3}
+th.sorted{color:#1a3a6b}
+td{padding:8px 12px;border-bottom:1px solid #f0f0f0;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:#f9f9f9}
+.badge{display:inline-block;padding:2px 10px;border-radius:20px;font-weight:700;font-size:12px}
+.badge.g{background:#e8f5e9;color:#2e7d32}
+.badge.a{background:#fff3e0;color:#e65100}
+.badge.r{background:#ffebee;color:#b71c1c}
+.pgr{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:13px;color:#666}
+.pgr button{height:30px;padding:0 14px;font-size:13px;cursor:pointer;border-radius:6px;border:1px solid #ccc;background:#fff;color:#333}
+.pgr button:hover:not(:disabled){background:#f0f0f0}
+.pgr button:disabled{opacity:.4;cursor:default}
+.dl-btn{margin-left:auto;height:30px;padding:0 16px;font-size:13px;cursor:pointer;border-radius:6px;border:1px solid #1a3a6b;background:#fff;color:#1a3a6b;font-weight:700}
+.dl-btn:hover{background:#eef1f8}
+footer{margin-top:24px;font-size:11px;color:#aaa;text-align:center}
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>Ekart Large F2P SLA Automated</h1>
+  <p class="sub">Seamless PBH uploads with pincode‑wise SLA tracking.</p>
+  <div class="inputs">
+    <div class="card">
+      <div class="lbl">Step 1 — Upload Large Supply Chain Externalisation LM, FM Holidays & SLA FILE (.xlsm / .xlsx)</div>
+      <div class="drop" id="dz" onclick="document.getElementById('fi').click()">
+        <input type="file" id="fi" accept=".xlsx,.xlsm" style="display:none">
+        <div class="drop-icon">&#8682;</div>
+        <div class="drop-text">Click to upload or drag &amp; drop</div>
+        <div class="drop-hint">Processed entirely in your browser — nothing is sent anywhere</div>
+      </div>
+      <div class="file-ok" id="fok"></div>
+      <div class="progress" id="prog"></div>
+      <div class="err" id="ferr"></div>
+    </div>
+    <div class="card">
+      <div class="lbl">Step 2 — Enter Pickup pincode</div>
+      <div class="pin-row">
+        <input type="number" id="pin" placeholder="e.g. 421002">
+        <button class="run-btn" onclick="run()">Submit &#8594;</button>
+      </div>
+      <div class="hint">Origin pincode &#8594; Mother Hub (FM_PBH) &#8594; F2F lane SLA per destination hub &#8594; Total SLA = F2P Required Days + F2F SLA (unique per destination pincode, sourced from F2P tab)</div>
+      <div class="err" id="perr"></div>
+    </div>
+  </div>
+  <div class="results" id="res">
+    <div class="summary" id="sum"></div>
+    <div class="frow">
+      <input type="text" id="srch" placeholder="Search pincode, hub, beat, city, state…" oninput="doFilter()">
+      <select id="zf" onchange="doFilter()"><option value="">All zones</option></select>
+      <select id="tf" onchange="doFilter()">
+        <option value="">All SLA tiers</option>
+        <option value="g">Fast (&#8804; 3 days)</option>
+        <option value="a">Standard (3&#8211;6 days)</option>
+        <option value="r">Slow (&gt; 6 days)</option>
+      </select>
+      <span class="src-tag" id="stag"></span>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr>
+          <th onclick="doSort('pin')"   id="th-pin">Dest. Pincode &#9660;</th>
+          <th onclick="doSort('zone')"  id="th-zone">Zone &#9660;</th>
+          <th onclick="doSort('beat')"  id="th-beat">Beat &#9660;</th>
+          <th onclick="doSort('hub')"   id="th-hub">Dest. Hub &#9660;</th>
+          <th onclick="doSort('city')"  id="th-city">City &#9660;</th>
+          <th onclick="doSort('state')" id="th-state">State &#9660;</th>
+          <th onclick="doSort('f2p')"   id="th-f2p"  style="text-align:right">F2P Days &#9660;</th>
+          <th onclick="doSort('f2f')"   id="th-f2f"  style="text-align:right">F2F SLA &#9660;</th>
+          <th onclick="doSort('tot')"   id="th-tot"  style="text-align:right">Total SLA &#9660;</th>
+        </tr></thead>
+        <tbody id="tb"></tbody>
+      </table>
+    </div>
+    <div class="pgr">
+      <button id="pb" onclick="pg(-1)" disabled>&#8592; Prev</button>
+      <span id="pi"></span>
+      <button id="nb" onclick="pg(1)">Next &#8594;</button>
+      <button class="dl-btn" onclick="dl()">&#8595; Download CSV</button>
+    </div>
+  </div>
+  <footer>Ekart Large F2P SLA Automated &mdash; Your browser handles all processing locally, with zero external data sharing. Simply revisit this page whenever you need to generate fresh SLA Report.</footer>
+</div>
+
+<script>
+/* ================================================================
+   Self-contained XLSX/XLSM parser — no CDN, no internet required
+   Correctly handles ZIP extra fields of any length
+   ================================================================ */
+function u16(b,o){return b[o]|(b[o+1]<<8)}
+function u32(b,o){return(b[o]|(b[o+1]<<8)|(b[o+2]<<16)|(b[o+3]<<24))>>>0}
+
+async function unzip(ab){
+  var data=new Uint8Array(ab), files={};
+  var i=0;
+  while(i<=data.length-30){
+    if(data[i]===0x50&&data[i+1]===0x4B&&data[i+2]===0x03&&data[i+3]===0x04){
+      var flags    =u16(data,i+6);
+      var method   =u16(data,i+8);
+      var compSz   =u32(data,i+18);
+      var uncompSz =u32(data,i+22);
+      var nameLen  =u16(data,i+26);
+      var extraLen =u16(data,i+28); // critical: must skip this many bytes before data
+      var name     =new TextDecoder().decode(data.slice(i+30,i+30+nameLen));
+      var dataOff  =i+30+nameLen+extraLen;
+      if(!(flags&0x08)&&compSz>0){
+        files[name]={method:method,compSz:compSz,uncompSz:uncompSz,off:dataOff};
+        i=dataOff+compSz;
+      } else {
+        i+=30+nameLen+extraLen+1;
+      }
+    } else {
+      i++;
+    }
+  }
+  return files;
+}
+
+async function decompress(rawData,entry){
+  var slice=rawData.slice(entry.off,entry.off+entry.compSz);
+  if(entry.method===0) return slice;
+  var ds=new DecompressionStream('deflate-raw');
+  var w=ds.writable.getWriter(); w.write(slice); w.close();
+  var chunks=[],reader=ds.readable.getReader();
+  while(true){var r=await reader.read();if(r.done)break;chunks.push(r.value)}
+  var total=chunks.reduce(function(s,c){return s+c.length},0);
+  var out=new Uint8Array(total),off=0;
+  chunks.forEach(function(c){out.set(c,off);off+=c.length});
+  return out;
+}
+
+async function getText(rawData,files,name){
+  var e=files[name]; if(!e) return null;
+  var bytes=await decompress(rawData,e);
+  return new TextDecoder('utf-8').decode(bytes);
+}
+
+function unescape(s){
+  return s.replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/&#xD;|&#xA;/g,'');
+}
+
+function parseSharedStrings(xml){
+  var arr=[],re=/<si>([\s\S]*?)<\/si>/g,tRe=/<t[^>]*>([\s\S]*?)<\/t>/g,m,tm;
+  while((m=re.exec(xml))!==null){
+    var txt=''; tRe.lastIndex=0;
+    while((tm=tRe.exec(m[1]))!==null) txt+=tm[1];
+    arr.push(unescape(txt));
+  }
+  return arr;
+}
+
+function colToNum(s){var n=0;for(var i=0;i<s.length;i++)n=n*26+s.charCodeAt(i)-64;return n-1}
+
+function parseSheet(xml,ss){
+  var rows=[];
+  var rowRe=/<row\b[^>]*r="(\d+)"[^>]*>([\s\S]*?)<\/row>/g;
+  var cellRe=/<c\s+r="([A-Z]+)\d+"([^>]*)>([\s\S]*?)<\/c>/g;
+  var valRe=/<v>([\s\S]*?)<\/v>/;
+  var rm,cm;
+  while((rm=rowRe.exec(xml))!==null){
+    var ri=parseInt(rm[1],10)-1;
+    while(rows.length<=ri) rows.push([]);
+    var row=rows[ri];
+    cellRe.lastIndex=0;
+    while((cm=cellRe.exec(rm[2]))!==null){
+      var col=colToNum(cm[1]),attrs=cm[2],inner=cm[3];
+      var vm=valRe.exec(inner),val='';
+      if(vm) val=(attrs.indexOf('t="s"')!==-1)?( ss[parseInt(vm[1],10)]||'' ):vm[1];
+      while(row.length<=col) row.push('');
+      row[col]=val;
+    }
+  }
+  return rows;
+}
+
+function rowsToObj(rows){
+  if(rows.length<2) return [];
+  var hdrs=rows[0];
+  var result=[];
+  for(var i=1;i<rows.length;i++){
+    var r=rows[i];
+    // skip entirely blank rows
+    var hasData=false;
+    for(var j=0;j<r.length;j++){if(r[j]&&String(r[j]).trim()!==''){hasData=true;break}}
+    if(!hasData) continue;
+    var o={};
+    hdrs.forEach(function(h,j){o[h]=r[j]!==undefined?r[j]:''});
+    result.push(o);
+  }
+  return result;
+}
+
+function getSheetMap(wbXml){
+  var map={},re=/<sheet\b[^>]*name="([^"]+)"[^>]*r:id="([^"]+)"/g,m;
+  while((m=re.exec(wbXml))!==null) map[m[1]]=m[2];
+  return map;
+}
+function getRels(xml){
+  var map={},re=/<Relationship\b[^>]*Id="([^"]+)"[^>]*Target="([^"]+)"/g,m;
+  while((m=re.exec(xml))!==null) map[m[1]]=m[2];
+  return map;
+}
+
+async function parseXLSX(ab){
+  var rawData=new Uint8Array(ab);
+  var files=await unzip(ab);
+  var wbXml=await getText(rawData,files,'xl/workbook.xml');
+  if(!wbXml) throw new Error('Not a valid xlsx/xlsm file — missing workbook.xml');
+  var relsXml=await getText(rawData,files,'xl/_rels/workbook.xml.rels')||'';
+  var ssXml=await getText(rawData,files,'xl/sharedStrings.xml')||'';
+  var ss=parseSharedStrings(ssXml);
+  var sheetNameMap=getSheetMap(wbXml);
+  var relMap=getRels(relsXml);
+  var result={};
+  for(var name in sheetNameMap){
+    var rId=sheetNameMap[name];
+    var target=(relMap[rId]||'').replace(/^.*\//,'');
+    if(!target) continue;
+    var sheetXml=await getText(rawData,files,'xl/worksheets/'+target);
+    if(sheetXml) result[name]=rowsToObj(parseSheet(sheetXml,ss));
+  }
+  return result;
+}
+
+/* ================================================================
+   App logic — pincodes sourced from F2P tab
+   ================================================================ */
+var wbData=null,allRows=[],filtRows=[],sortCol='pin',sortAsc=true,curPage=0,PAGE=50;
+
+var dz=document.getElementById('dz');
+dz.addEventListener('dragover',function(e){e.preventDefault();dz.classList.add('over')});
+dz.addEventListener('dragleave',function(){dz.classList.remove('over')});
+dz.addEventListener('drop',function(e){e.preventDefault();dz.classList.remove('over');if(e.dataTransfer.files[0])loadFile(e.dataTransfer.files[0])});
+document.getElementById('fi').addEventListener('change',function(){if(this.files[0])loadFile(this.files[0])});
+document.getElementById('pin').addEventListener('keydown',function(e){if(e.key==='Enter')run()});
+
+function showErr(id,msg){var el=document.getElementById(id);el.textContent=msg;el.style.display='block'}
+function hideErr(id){document.getElementById(id).style.display='none'}
+function setProgress(msg){var el=document.getElementById('prog');el.textContent=msg;el.style.display=msg?'block':'none'}
+
+function findCol(rows){
+  var keys=rows&&rows.length?Object.keys(rows[0]):[];
+  return function(){
+    for(var i=0;i<arguments.length;i++){
+      var h=arguments[i].toLowerCase();
+      for(var j=0;j<keys.length;j++){if(keys[j].toLowerCase().indexOf(h)!==-1)return keys[j]}
+    }
+    return null;
+  };
+}
+
+async function loadFile(file){
+  hideErr('ferr');
+  document.getElementById('fok').style.display='none';
+  document.getElementById('res').style.display='none';
+  wbData=null;
+  setProgress('Reading file…');
+  try{
+    var ab=await file.arrayBuffer();
+    setProgress('Parsing sheets — may take a few seconds for large files…');
+    var sheets=await parseXLSX(ab);
+    var req=['F2P','FM_PBH','F2F'];
+    var miss=req.filter(function(s){return !sheets[s]||!sheets[s].length});
+    if(miss.length){setProgress('');showErr('ferr','Missing or empty sheets: '+miss.join(', '));return}
+    wbData=sheets;
+    setProgress('');
+    var f2pCount=wbData['F2P'].length;
+    document.getElementById('fok').textContent='\u2713 '+file.name+'  ('+f2pCount.toLocaleString()+' pincodes in F2P tab)';
+    document.getElementById('fok').style.display='block';
+  }catch(err){
+    setProgress('');
+    showErr('ferr','Could not parse file: '+err.message);
+  }
+}
+
+function run(){
+  hideErr('perr');
+  document.getElementById('res').style.display='none';
+  if(!wbData){showErr('perr','Please upload a PBH file first.');return}
+  var pinVal=document.getElementById('pin').value.trim();
+  if(!pinVal||isNaN(pinVal)){showErr('perr','Enter a valid source pincode.');return}
+  var srcPin=parseInt(pinVal,10);
+
+  var f2p=wbData['F2P'], fm=wbData['FM_PBH'], f2f=wbData['F2F'];
+
+  // Step 1: source pincode -> Mother Hub via FM_PBH
+  var ckFM=findCol(fm);
+  var fmPinK=ckFM('pincode'), fmMHK=ckFM('associated mh','associated m','associated');
+  if(!fmPinK||!fmMHK){showErr('perr','Cannot find Pincode / Associated MH columns in FM_PBH.');return}
+  var fmRow=null;
+  for(var i=0;i<fm.length;i++){if(parseInt(fm[i][fmPinK],10)===srcPin){fmRow=fm[i];break}}
+  if(!fmRow){showErr('perr','Pincode '+srcPin+' not found in FM_PBH. Please enter a valid source/origin pincode.');return}
+  var srcMH=String(fmRow[fmMHK]).toUpperCase().trim();
+
+  // Step 2: filter F2F by source_MH -> build DH -> SLA map
+  // Each destination hub gets its own lane SLA from this specific source MH
+  var ckF2F=findCol(f2f);
+  var f2fMHK=ckF2F('source_mh','source_m'), f2fDHK=ckF2F('dh'), f2fSLAK=ckF2F('sla');
+  if(!f2fMHK||!f2fDHK||!f2fSLAK){showErr('perr','Cannot find source_MH / DH / SLA columns in F2F.');return}
+  var dhSLA={};
+  for(var i=0;i<f2f.length;i++){
+    if(String(f2f[i][f2fMHK]).toUpperCase().trim()===srcMH){
+      var dh=String(f2f[i][f2fDHK]).toUpperCase().trim();
+      if(!(dh in dhSLA)) dhSLA[dh]=parseFloat(f2f[i][f2fSLAK])||0;
+    }
+  }
+  if(!Object.keys(dhSLA).length){showErr('perr','No F2F lanes found for source hub: '+srcMH);return}
+
+  // Step 3: build output from F2P tab (correct pincode list, correct F2P days per pincode)
+  var ckF2P=findCol(f2p);
+  var f2pPinK  = ckF2P('pincode');
+  var f2pZoneK = ckF2P('zone');
+  var f2pBeatK = ckF2P('beat');
+  var f2pHubK  = ckF2P('hub');
+  var f2pStateK= ckF2P('state');
+  var f2pCityK = ckF2P('city');
+  var f2pDaysK = ckF2P('required','f2p');
+  var f2pConcK = ckF2P('concat');
+
+  allRows=[];
+  for(var i=0;i<f2p.length;i++){
+    var r=f2p[i];
+    var pin  =parseInt(r[f2pPinK],10);
+    var zone =f2pZoneK  ? String(r[f2pZoneK]).trim()  : '';
+    var beat =f2pBeatK  ? String(r[f2pBeatK]).trim()  : '';
+    var hub  =f2pHubK   ? String(r[f2pHubK]).trim()   : '';
+    var state=f2pStateK ? String(r[f2pStateK]).trim()  : '';
+    var city =f2pCityK  ? String(r[f2pCityK]).trim()   : '';
+    var conc =f2pConcK  ? String(r[f2pConcK]).trim()   : '';
+    var f2pD =f2pDaysK  ? (parseFloat(r[f2pDaysK])||0) : 0;
+
+    // F2F SLA: look up this pincode's hub against the DH->SLA map for the source MH
+    var f2fSLA=(hub.toUpperCase() in dhSLA) ? dhSLA[hub.toUpperCase()] : null;
+
+    // Total SLA = F2P Required Days (per this pincode) + F2F SLA (per source->hub lane)
+    var total=(f2fSLA!==null) ? parseFloat((f2pD+f2fSLA).toFixed(4)) : null;
+
+    allRows.push({pin:pin,zone:zone,beat:beat,hub:hub,city:city,state:state,conc:conc,f2p:f2pD,f2f:f2fSLA,tot:total});
+  }
+
+  // Zone filter options
+  var zones=[];
+  allRows.forEach(function(r){if(r.zone&&zones.indexOf(r.zone)===-1)zones.push(r.zone)});
+  zones.sort();
+  var zf=document.getElementById('zf');
+  zf.innerHTML='<option value="">All zones</option>'+zones.map(function(z){return'<option value="'+z+'">'+z+'</option>'}).join('');
+
+  document.getElementById('stag').textContent='Source hub: '+srcMH;
+  document.getElementById('res').style.display='block';
+  curPage=0; doFilter();
+}
+
+function tier(v){if(v===null)return'';return v<=3?'g':v<=6?'a':'r'}
+
+function doFilter(){
+  var q=document.getElementById('srch').value.toLowerCase();
+  var z=document.getElementById('zf').value;
+  var t=document.getElementById('tf').value;
+  filtRows=allRows.filter(function(r){
+    if(z&&r.zone!==z) return false;
+    if(t&&tier(r.tot)!==t) return false;
+    if(q){var hay=String(r.pin)+r.zone+r.beat+r.hub+r.city+r.state;if(hay.toLowerCase().indexOf(q)===-1)return false}
+    return true;
+  });
+  curPage=0; renderSum(); renderTbl();
+}
+
+function renderSum(){
+  var n=filtRows.length;
+  var g=filtRows.filter(function(r){return tier(r.tot)==='g'}).length;
+  var a=filtRows.filter(function(r){return tier(r.tot)==='a'}).length;
+  var rd=filtRows.filter(function(r){return tier(r.tot)==='r'}).length;
+  document.getElementById('sum').innerHTML=
+    '<div class="stat"><div class="stat-n">'+n.toLocaleString()+'</div><div class="stat-l">Pincodes (from F2P tab)</div></div>'+
+    '<div class="stat g"><div class="stat-n">'+g.toLocaleString()+'</div><div class="stat-l">Fast \u22643 days</div></div>'+
+    '<div class="stat a"><div class="stat-n">'+a.toLocaleString()+'</div><div class="stat-l">Standard 3\u20136 days</div></div>'+
+    '<div class="stat r"><div class="stat-n">'+rd.toLocaleString()+'</div><div class="stat-l">Slow &gt;6 days</div></div>';
+}
+
+var colLabels={pin:'Dest. Pincode',zone:'Zone',beat:'Beat',hub:'Dest. Hub',city:'City',state:'State',f2p:'F2P Days',f2f:'F2F SLA',tot:'Total SLA'};
+function doSort(col){
+  if(sortCol===col)sortAsc=!sortAsc;else{sortCol=col;sortAsc=true}
+  Object.keys(colLabels).forEach(function(c){
+    var th=document.getElementById('th-'+c);
+    if(!th)return;
+    th.textContent=colLabels[c]+(c===sortCol?(sortAsc?' \u25b2':' \u25bc'):' \u25bc');
+    if(c===sortCol)th.classList.add('sorted');else th.classList.remove('sorted');
+  });
+  filtRows.sort(function(a,b){
+    var av=a[sortCol],bv=b[sortCol];
+    if(av===null&&bv===null)return 0;if(av===null)return 1;if(bv===null)return -1;
+    return sortAsc?(av>bv?1:-1):(av<bv?1:-1);
+  });
+  curPage=0; renderTbl();
+}
+
+function fmt(v){if(v===null||v===undefined)return'\u2014';var n=Number(v);return n%1===0?String(n):n.toFixed(2)}
+
+function renderTbl(){
+  var s=curPage*PAGE,e=Math.min(s+PAGE,filtRows.length),rows=filtRows.slice(s,e);
+  document.getElementById('tb').innerHTML=rows.map(function(r){
+    var t=tier(r.tot);
+    var badge=r.tot!==null?'<span class="badge '+t+'">'+fmt(r.tot)+'</span>':'\u2014';
+    return'<tr>'+
+      '<td><strong>'+r.pin+'</strong></td>'+
+      '<td>'+r.zone+'</td>'+
+      '<td>'+r.beat+'</td>'+
+      '<td style="max-width:200px;overflow:hidden;text-overflow:ellipsis" title="'+r.hub+'">'+r.hub+'</td>'+
+      '<td>'+r.city+'</td>'+
+      '<td>'+r.state+'</td>'+
+      '<td style="text-align:right">'+fmt(r.f2p)+'</td>'+
+      '<td style="text-align:right">'+(r.f2f!==null?r.f2f:'\u2014')+'</td>'+
+      '<td style="text-align:right">'+badge+'</td>'+
+      '</tr>';
+  }).join('');
+  document.getElementById('pi').textContent=(s+1)+'\u2013'+e+' of '+filtRows.length.toLocaleString();
+  document.getElementById('pb').disabled=(curPage===0);
+  document.getElementById('nb').disabled=(e>=filtRows.length);
+}
+
+function pg(d){curPage+=d;renderTbl()}
+
+function dl(){
+  var hdr=['Dest Pincode','Zone','Beat','Dest Hub','City','State','Concat','F2P Required Days','F2F SLA','Total SLA'];
+  var rows=filtRows.map(function(r){
+    return[r.pin,r.zone,r.beat,r.hub,r.city,r.state,r.conc,fmt(r.f2p),r.f2f!==null?r.f2f:'',r.tot!==null?fmt(r.tot):''];
+  });
+  var csv=[hdr].concat(rows).map(function(r){
+    return r.map(function(v){return'"'+String(v).replace(/"/g,'""')+'"'}).join(',');
+  }).join('\n');
+  var a=document.createElement('a');
+  a.href='data:text/csv;charset=utf-8,'+encodeURIComponent(csv);
+  a.download='F2P_SLA_Output.csv';
+  a.click();
+}
+</script>
+</body>
+</html>
